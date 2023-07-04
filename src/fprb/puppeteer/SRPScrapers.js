@@ -1,5 +1,8 @@
+const dotenv = require('dotenv');
+dotenv.config();
+
 const scraperObject = {
-    url: 'http://root:default@192.168.88.201/i_sysrelparam.htm',
+    url:  `${process.env.FPRX_URL}/i_sysrelparam.htm`,
     async scraper(browser){
         let page = await browser.newPage();
         console.log(`Navigating to System Related Parameters... `);

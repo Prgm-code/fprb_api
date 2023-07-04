@@ -1,5 +1,5 @@
 const scraperObject = {
-    url: 'http://root:default@192.168.88.200/',
+    url: `${process.env.FPRX_URL}`,
     async scraper(browser){
         let page = await browser.newPage();
         

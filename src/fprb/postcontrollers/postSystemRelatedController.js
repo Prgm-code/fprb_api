@@ -27,7 +27,7 @@ const postSystemRelatedParameters = async (params) => {
 
   // Verifica que los datos no estén vacíos o nulos
   for (const key in postParams) {
-    if (postParams.hasOwnProperty(key)) {
+    if (postParams.hasOwnProperty(key) && key !== "WEBSBC" && key !== "WEBSEI"&& key !== "WEBTSM"&& key !== "WEBTSSA" && key !== "WEBTSSB") {
       const element = postParams[key];
       if (element === "" || element === null) {
         console.log("Error: " + key + " is empty or null");
@@ -39,11 +39,11 @@ const postSystemRelatedParameters = async (params) => {
   // Realiza la solicitud POST si todos los datos son válidos
   try {
     const response = await axios.post(`${process.env.FPRX_URL}/i_sysrelparam.htm`, querystring.stringify(postParams));
-    console.log(response);
-    return response.data;
+    console.log(response.status);
+    return response.status;
   } catch (error) {
     console.log(error);
-    return error;
+    return {error, status: error.response?.status};
   }
 }
 
