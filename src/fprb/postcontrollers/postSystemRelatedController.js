@@ -42,8 +42,21 @@ const postSystemRelatedParameters = async (params) => {
     console.log(response.status);
     return response.status;
   } catch (error) {
-    console.log(error);
-    return {error, status: error.response?.status};
+    if (error.response) {
+      // El servidor respondió con un estado fuera del rango de 2xx
+      console.error('Error de respuesta del servidor', error.response.status);
+      console.error('Datos de error', error.response.data);
+      console.error('Cabeceras de error', error.response.headers);
+      throw { message: error.message, status: error.response.status };
+  } else if (error.request) {
+      // La solicitud se hizo pero no se recibió ninguna respuesta
+      console.error('No se recibió ninguna respuesta', error.request);
+      throw { message: error.message, status: 307 }; // Usar un 307 Temporary Redirect si no hay respuesta
+  } else {
+      // Algo sucedió en la configuración de la solicitud que desencadenó un error
+      console.error('Error de configuración', error.message);
+      throw { message: error.message, status: 300 }; // Usar un 300 Multiple Choices si hay un problema de configuración
+  }
   }
 }
 

@@ -4,9 +4,9 @@ const postGeneratorParameters = require('../fprb/postcontrollers/postGeneratorRe
 const SRPScrapers = require('../fprb/puppeteer/SRPScrapers.js');
 const postSystemRelatedParameters = require('../fprb/postcontrollers/postSystemRelatedController.js');
 const browserObject = require('../fprb/browser.js');
+const createError = require('http-errors');
 
-
-exports.getGeneratorRelatedValues = async (req, res) => {
+exports.getGeneratorRelatedValues = async (req, res, next) => {
     try {
         const browserInstance = await browserObject.startBrowser();
         const generatorRelatedValues =  await GSScrapers.scraper(browserInstance);
@@ -14,27 +14,37 @@ exports.getGeneratorRelatedValues = async (req, res) => {
         res.json(generatorRelatedValues);
         } catch (error) {
             console.log(error);
+            let httpErrorCode = 500;
+            if (error.status) {
+                httpErrorCode = error.status;
+            }
+            // Pass the error to the error-handling middleware}
+            next(createError(httpErrorCode, error));
+
         }
 }
 
-exports.postGeneratorRelatedValues = async (req, res) => {
+exports.postGeneratorRelatedValues = async (req, res, next) => {
     try {
         const data = req.body;
-        console.log('data:',data);
         const response = await postGeneratorParameters(data);
-        console.log(response);
         res.status(200).json(response);
-
-   
-        } catch (error) {
-        
-            console.log(error);
-            res.status(500).json(error);
+    } catch (error) {
+        console.log(error);
+        let httpErrorCode = 500;
+        if (error.status) {
+            httpErrorCode = error.status;
         }
+        // Pass the error to the error-handling middleware}
+        next(createError(httpErrorCode, error));
+    }
 }
 
 
-exports.getSystemRelatedValues = async (req, res) => {
+
+
+
+exports.getSystemRelatedValues = async (req, res, next) => {
     try {
         const browserInstance = await browserObject.startBrowser();
         const systemRelatedValues =  await SRPScrapers.scraper(browserInstance);
@@ -42,21 +52,28 @@ exports.getSystemRelatedValues = async (req, res) => {
         res.json(systemRelatedValues);
         } catch (error) {
             console.log(error);
+            let httpErrorCode = 500;
+            if (error.status) {
+                httpErrorCode = error.status;
+            }
+            // Pass the error to the error-handling middleware}
+            next(createError(httpErrorCode, error));
         }
 }
 
-exports.postSystemRelatedValues = async (req, res) => {
+exports.postSystemRelatedValues = async (req, res, next) => {
     const data = req.body;
-    console.log('data:',data);
     try {
-        
-
         const response = await postSystemRelatedParameters(data);   
         console.log(response);
         res.status(200).json(response);
-
         } catch (error) {
             console.log(error);
-            res.status(500).json(error);
-        }
+            let httpErrorCode = 500;
+            if (error.status) {
+                httpErrorCode = error.status;
+            }
+            // Pass the error to the error-handling middleware}
+            next(createError(httpErrorCode, error));
+          }
 }
