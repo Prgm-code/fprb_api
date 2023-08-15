@@ -13,22 +13,22 @@ const app = express();
 const whitelist = [process.env.LOCAL_URL];  // Lista de dominios permitidos
 
 const corsOptions = {
-    origin: function (origin, callback) {
-        if (whitelist.indexOf(origin) !== -1 || !origin) { 
-            // Permitir que la solicitud continúe si el origin está en la lista o si es una solicitud desde Postman o similar (origin undefined).
-            callback(null, true);
-        } else {
-            callback(new Error('Not allowed by CORS'));
-        }
+  origin: function (origin, callback) {
+    if (whitelist.indexOf(origin) !== -1 || !origin) { 
+      // Permitir que la solicitud continúe si el origin está en la lista o si es una solicitud desde Postman o similar (origin undefined).
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
     }
+  }
 }
 
+app.use(morgan("dev"));
 app.use(cors(corsOptions));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-app.use(morgan("dev"));
 
 app.use("/fprb", fprbRouter);
 

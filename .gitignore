@@ -1,4 +1,58 @@
+# Compiled output
+/dist
+**/dist
 /node_modules
+**/node_modules
+
+# Logs
+logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# OS
+.DS_Store
+**/.DS_Store
+
+# Tests
+/coverage
+**/coverage
+/.nyc_output
+**/.nyc_output
+
+# IDEs and editors
+/.idea
+**/.idea
+.project
+**/.project
+.classpath
+**/.classpath
+.c9/
+**/.c9/
+*.launch
+**/*.launch
+.settings/
+**/.settings/
+*.sublime-workspace
+**/*.sublime-workspace
+
+# IDE - VSCode
+.vscode/*
+**/.vscode/*
+!.vscode/settings.json
+!**/.vscode/settings.json
+!.vscode/tasks.json
+!**/.vscode/tasks.json
+!.vscode/launch.json
+!**/.vscode/launch.json
+!.vscode/extensions.json
+!**/.vscode/extensions.json
+
+# Environment variables
 .env
-data.db
+**/.env
+
 
