@@ -1,7 +1,7 @@
 const dotenv = require("dotenv");
 dotenv.config();
 
-const scraperObject = {
+const generatorServiceScrape = {
   url: `${process.env.FPRX_URL}/i_generatorset.htm`,
   async scraper(browser) {
     let page = await browser.newPage();
@@ -81,4 +81,4 @@ const scraperObject = {
   },
 };
 
-module.exports = scraperObject;
+module.exports = generatorServiceScrape;

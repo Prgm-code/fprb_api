@@ -1,7 +1,7 @@
 const dotenv = require("dotenv");
 dotenv.config();
 
-const scraperObject = {
+const systemRelatedScraper = {
   url: `${process.env.FPRX_URL}/i_sysrelparam.htm`,
   async scraper(browser) {
     let page = await browser.newPage();
@@ -83,4 +83,4 @@ const scraperObject = {
   },
 };
 
-module.exports = scraperObject;
+module.exports = systemRelatedScraper;

@@ -1,0 +1,23 @@
+{"error":"connect ECONNREFUSED 127.0.0.1:1883","level":"error","message":"Connection error:","service":"MqttService._connectToBroker","timestamp":"2023-08-09T04:33:52.493Z"}
+{"error":"Connection error","level":"error","message":"Error connecting to MQTT broker, retrying...","service":"MqttService.connectToBroker","timestamp":"2023-08-09T04:33:52.495Z"}
+{"error":"connect ECONNREFUSED 127.0.0.1:1883","level":"error","message":"Connection error:","service":"MqttService._connectToBroker","timestamp":"2023-08-09T04:33:52.511Z"}
+{"error":"Connection error","level":"error","message":"Error connecting to MQTT broker, retrying...","service":"MqttService.connectToBroker","timestamp":"2023-08-09T04:33:52.521Z"}
+{"level":"error","message":"Error subscribing to topic: Cannot read properties of null (reading 'subscribe')","service":"mqttClient.subscribeToTopic","timestamp":"2023-08-09T04:33:52.526Z"}
+{"error":"connect ECONNREFUSED 127.0.0.1:1883","level":"error","message":"Connection error:","service":"MqttService._connectToBroker","timestamp":"2023-08-09T04:33:53.512Z"}
+{"error":"connect ECONNREFUSED 127.0.0.1:1883","level":"error","message":"Connection error:","service":"MqttService._connectToBroker","timestamp":"2023-08-09T04:33:53.531Z"}
+{"error":"connect ECONNREFUSED 127.0.0.1:1883","level":"error","message":"Connection error:","service":"MqttService._connectToBroker","timestamp":"2023-08-09T04:33:54.516Z"}
+{"error":"connect ECONNREFUSED 127.0.0.1:1883","level":"error","message":"Connection error:","service":"MqttService._connectToBroker","timestamp":"2023-08-09T04:33:54.534Z"}
+{"error":"connect ECONNREFUSED 127.0.0.1:1883","level":"error","message":"Connection error:","service":"MqttService._connectToBroker","timestamp":"2023-08-09T04:33:55.520Z"}
+{"error":"connect ECONNREFUSED 127.0.0.1:1883","level":"error","message":"Connection error:","service":"MqttService._connectToBroker","timestamp":"2023-08-09T04:33:55.537Z"}
+{"error":"connect ECONNREFUSED 127.0.0.1:1883","level":"error","message":"Connection error:","service":"MqttService._connectToBroker","timestamp":"2023-08-09T04:33:56.523Z"}
+{"error":"connect ECONNREFUSED 127.0.0.1:1883","level":"error","message":"Connection error:","service":"MqttService._connectToBroker","timestamp":"2023-08-09T04:33:56.541Z"}
+{"error":"connect ECONNREFUSED 127.0.0.1:1883","level":"error","message":"Connection error:","service":"MqttService._connectToBroker","timestamp":"2023-08-09T04:33:57.528Z"}
+{"error":"connect ECONNREFUSED 127.0.0.1:1883","level":"error","message":"Connection error:","service":"MqttService._connectToBroker","timestamp":"2023-08-09T04:33:57.543Z"}
+{"error":"connect ECONNREFUSED 127.0.0.1:1883","level":"error","message":"Connection error:","service":"MqttService._connectToBroker","timestamp":"2023-08-09T04:33:58.531Z"}
+{"error":"connect ECONNREFUSED 127.0.0.1:1883","level":"error","message":"Connection error:","service":"MqttService._connectToBroker","timestamp":"2023-08-09T04:33:58.544Z"}
+{"error":"connect ECONNREFUSED 127.0.0.1:1883","level":"error","message":"Connection error:","service":"MqttService._connectToBroker","timestamp":"2023-08-09T04:33:59.534Z"}
+{"error":"connect ECONNREFUSED 127.0.0.1:1883","level":"error","message":"Connection error:","service":"MqttService._connectToBroker","timestamp":"2023-08-09T04:33:59.547Z"}
+{"error":"connect ECONNREFUSED 127.0.0.1:1883","level":"error","message":"Connection error:","service":"MqttService._connectToBroker","timestamp":"2023-08-09T04:34:00.538Z"}
+{"error":"connect ECONNREFUSED 127.0.0.1:1883","level":"error","message":"Connection error:","service":"MqttService._connectToBroker","timestamp":"2023-08-09T04:34:00.549Z"}
+{"error":"connect ECONNREFUSED 127.0.0.1:1883","level":"error","message":"Connection error:","service":"MqttService._connectToBroker","timestamp":"2023-08-09T04:34:01.541Z"}
+{"error":"connect ECONNREFUSED 127.0.0.1:1883","level":"error","message":"Connection error:","service":"MqttService._connectToBroker","timestamp":"2023-08-09T04:34:01.551Z"}

@@ -1,8 +1,29 @@
 const express = require("express");
 const fprbRouter = require("./routes/fprbRouter.js");
 const morgan = require("morgan");
+const cors = require("cors");
+const { handleMqttInit, handleMqttMessage } = require('./controllers/fprbmqttController.js')
+const dotenv = require("dotenv");
+
+dotenv.config();
+
 
 const app = express();
+
+const whitelist = [process.env.LOCAL_URL];  // Lista de dominios permitidos
+
+const corsOptions = {
+    origin: function (origin, callback) {
+        if (whitelist.indexOf(origin) !== -1 || !origin) { 
+            // Permitir que la solicitud continúe si el origin está en la lista o si es una solicitud desde Postman o similar (origin undefined).
+            callback(null, true);
+        } else {
+            callback(new Error('Not allowed by CORS'));
+        }
+    }
+}
+
+app.use(cors(corsOptions));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -14,6 +35,9 @@ app.use("/fprb", fprbRouter);
 app.get("/", (req, res, next) => {
   res.send("Hello World!");
 });
+
+handleMqttInit();
+handleMqttMessage();
 
 /* Error Handling */
 

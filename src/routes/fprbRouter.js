@@ -3,7 +3,7 @@ const router = express.Router();
 const { getGeneratorRelatedValues, 
     getSystemRelatedValues, 
     postGeneratorRelatedValues,
-    postSystemRelatedValues } = require('../controllers/fprbController.js');
+    postSystemRelatedValues } = require('../controllers/fprbmqttController.js');
 
 
 
